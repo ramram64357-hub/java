@@ -10,22 +10,22 @@ pipeline{
                    git credentialsId: 'ramzz_file', url: 'https://github.com/ramram64357-hub/java.git'
             }
         }
-        stage(build){
+        stage('build'){
             steps{
                 sh'mvn -- version'
             }
         }
-        stage{
+        stage('test'){
             steps{
                 sh'mvn clean compile'
             }
         }
-        stage ('deploy'){
+        stage('deploy'){
             steps{
                 sh'mvn test'
             }
         }
-        stage (run){
+        stage('run'){
             steps{
                 sh'mvn package'
             }
