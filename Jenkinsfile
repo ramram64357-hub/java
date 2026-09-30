@@ -7,7 +7,7 @@ pipeline{
     stages{
         stage('github'){
             steps{
-
+                   git credentialsId: 'ramzz_file', url: 'https://github.com/ramram64357-hub/java.git'
             }
         }
         stage(build){
